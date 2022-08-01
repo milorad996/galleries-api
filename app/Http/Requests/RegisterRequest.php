@@ -33,7 +33,7 @@ class RegisterRequest extends FormRequest
             //'password' => 'required|min:8',
 
             // 'password_confirmation' => 'required|same_as:password',
-            'terms_of_service' => 'required|accepted',
+            'terms_of_service' => 'accepted',
 
         ];
     }
