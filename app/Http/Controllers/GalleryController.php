@@ -17,10 +17,10 @@ class GalleryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-
-        $galleries = Gallery::with('author', 'images')->paginate(10);
+        $per_page = $request->query('per_page', 10);
+        $galleries = Gallery::with('author', 'images')->paginate($per_page);
 
         return response()->json($galleries);
     }
